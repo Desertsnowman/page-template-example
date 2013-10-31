@@ -125,6 +125,9 @@ class Page_Template_Plugin {
 		// Create the key used for the themes cache
 		$cache_key = 'page_templates-' . md5( get_theme_root() . '/' . get_stylesheet() );
 
+		// Generate a new cache
+		get_page_templates();
+
 		// Retrieve the cache list. If it doesn't exist, or it's empty prepare an array
 		$templates = wp_cache_get( $cache_key, 'themes' );
 		if ( empty( $templates ) ) {
